@@ -361,3 +361,23 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+.vscode/
+*.db
+*.bat
+*.exp
+*.pdb
+*.dll
+*.a
+*.so
+*.db-shm
+*.db-wal
+package-lock.json
+*.sqlite*
+node_modules/
+build/
+# C benchmark binary
+bench/bench
+deno.lock
+bun.lockb
+.DS_Store
