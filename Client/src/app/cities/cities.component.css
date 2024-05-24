@@ -6,3 +6,10 @@ h1 {
   text-align: center;
   /* margin: 20px 0; */
 }
+th {
+  font-weight: bold;
+}
+mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}

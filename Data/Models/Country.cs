@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace WorldAtlas.Data.Models
 {
@@ -16,8 +17,10 @@ namespace WorldAtlas.Data.Models
 
         public required string Name { get; set; }
 
+        [JsonPropertyName("iso2")]
         public required string ISO2Code { get; set; }
 
+        [JsonPropertyName("iso3")]
         public required string ISO3Code { get; set; }
 
         public ICollection<City>? Cities { get; set; }

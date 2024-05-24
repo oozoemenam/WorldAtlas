@@ -7,18 +7,18 @@ import { MatTableDataSource } from '@angular/material/table';
 import { environment } from '../../environments/environment.development';
 import { ApiResponse } from '../api-response.model';
 import { MaterialModule } from '../material/material.module';
-import { City } from './city.model';
+import { Country } from './country.model';
 
 @Component({
-  selector: 'app-cities',
+  selector: 'app-countries',
   standalone: true,
   imports: [CommonModule, HttpClientModule, MaterialModule],
-  templateUrl: './cities.component.html',
-  styleUrl: './cities.component.css',
+  templateUrl: './countries.component.html',
+  styleUrl: './countries.component.css',
 })
-export class CitiesComponent implements OnInit {
+export class CountriesComponent implements OnInit {
   public displayedColumns: string[] = ['id', 'name', 'longitude', 'latitude'];
-  public cities!: MatTableDataSource<City>;
+  public countries!: MatTableDataSource<Country>;
 
   defaultPageIndex: number = 0;
   defaultPageSize: number = 10;
@@ -46,7 +46,7 @@ export class CitiesComponent implements OnInit {
   }
 
   getData(event: PageEvent): void {
-    var url = environment.baseUrl + '/Cities';
+    var url = environment.baseUrl + '/Countries';
     var params = new HttpParams()
       .set('pageIndex', event.pageIndex.toString())
       .set('pageSize', event.pageSize.toString())
@@ -65,7 +65,9 @@ export class CitiesComponent implements OnInit {
         this.paginator.length = result.totalCount;
         this.paginator.pageIndex = result.pageIndex;
         this.paginator.pageSize = result.pageSize;
-        this.cities = new MatTableDataSource<City>(result.data as City[]);
+        this.countries = new MatTableDataSource<Country>(
+          result.data as Country[]
+        );
       },
       error: console.log,
     });
