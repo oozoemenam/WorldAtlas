@@ -5,3 +5,7 @@ mat-form-field {
   font-size: 14px;
   width: 100%;
 }
+.add-btn {
+  /* float: right; */
+  margin: 10px;
+}

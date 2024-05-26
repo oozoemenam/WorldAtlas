@@ -4,6 +4,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { RouterModule } from '@angular/router';
 import { environment } from '../../environments/environment.development';
 import { ApiResponse } from '../api-response.model';
 import { MaterialModule } from '../material/material.module';
@@ -12,7 +13,7 @@ import { Country } from './country.model';
 @Component({
   selector: 'app-countries',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, MaterialModule],
+  imports: [CommonModule, RouterModule, HttpClientModule, MaterialModule],
   templateUrl: './countries.component.html',
   styleUrl: './countries.component.css',
 })
