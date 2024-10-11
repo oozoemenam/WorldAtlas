@@ -31,7 +31,7 @@
         required
         placeholder="Insert the ISO2 Country code"
       />
-      <mat-error *ngIf="form.controls['iso2'].errors?.['required']">
+      <!-- <mat-error *ngIf="form.controls['iso2'].errors?.['required']">
         ISO 3166-1 ALPHA-2 Country code is required.
       </mat-error>
       <mat-error *ngIf="form.controls['iso2'].errors?.['pattern']">
@@ -39,8 +39,19 @@
       </mat-error>
       <mat-error *ngIf="form.controls['iso2'].errors?.['isDupeField']">
         This code already exists: please choose another.
-      </mat-error> </mat-form-field
-    ><mat-form-field>
+      </mat-error> -->
+      <mat-error
+        *ngFor="
+          let error of getErrors(
+            form.get('iso2')!,
+            'ISO 3166-1 ALPHA 2 Country code'
+          )
+        "
+      >
+        {{ error }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
       <mat-label> ISO 3166-1 ALPHA-3 Country code (3 letters) </mat-label>
       <input
         matInput

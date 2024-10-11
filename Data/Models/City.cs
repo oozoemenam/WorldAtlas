@@ -14,7 +14,8 @@ namespace WorldAtlas.Data.Models
         [Required]
         public int Id { get; set; }
 
-        public required string Name { get; set; }
+        [Required]
+        public string Name { get; set; } = string.Empty;
 
         [Column(TypeName = "decimal(7, 4)")]
         public decimal Longitude { get; set; }
