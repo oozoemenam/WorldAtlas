@@ -118,25 +118,4 @@ export class EditCountryComponent implements OnInit {
         .pipe(map((result) => (result ? { isDupeField: result } : null)));
     };
   }
-
-  getErrors(control: AbstractControl, displayName: string): string[] {
-    const errors: string[] = [];
-    Object.keys(control.errors || {}).forEach((key) => {
-      switch (key) {
-        case 'required':
-          errors.push(`${displayName} is required.`);
-          break;
-        case 'pattern':
-          errors.push(`${displayName} contains invalid characters.`);
-          break;
-        case 'isDupeField':
-          errors.push(`${displayName} already exists. Choose another.`);
-          break;
-        default:
-          errors.push(`${displayName} already exists. Choose another.`);
-          break;
-      }
-    });
-    return errors;
-  }
 }

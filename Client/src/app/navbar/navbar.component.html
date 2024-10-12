@@ -1,10 +1,20 @@
 <header class="header">
   <mat-toolbar color="primary">
-    <!-- <a mat-icon-button [routerLink]="['/']">HOME</a> -->
     <a mat-flat-button color="primary" [routerLink]="['/']">Home</a>
     <a mat-flat-button color="primary" [routerLink]="['/cities']">Cities</a>
     <a mat-flat-button color="primary" [routerLink]="['/countries']">
       Countries
     </a>
+    <span class="separator"></span>
+    <a
+      *ngIf="!loggedIn"
+      [routerLink]="['/login']"
+      mat-flat-button
+      color="primary"
+      >Log in</a
+    >
+    <a *ngIf="loggedIn" mat-flat-button color="primary" (click)="onLogout()"
+      >Log out</a
+    >
   </mat-toolbar>
 </header>
